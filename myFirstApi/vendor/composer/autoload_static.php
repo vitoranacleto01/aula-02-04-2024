@@ -537,6 +537,7 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Factories\\ConfigurationFactory' => __DIR__ . '/..' . '/laravel/pint/app/Factories/ConfigurationFactory.php',
         'App\\Factories\\ConfigurationResolverFactory' => __DIR__ . '/..' . '/laravel/pint/app/Factories/ConfigurationResolverFactory.php',
+        'App\\Http\\Controllers\\Api\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/UserController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',

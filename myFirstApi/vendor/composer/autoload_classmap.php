@@ -14,6 +14,7 @@ return array(
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Factories\\ConfigurationFactory' => $vendorDir . '/laravel/pint/app/Factories/ConfigurationFactory.php',
     'App\\Factories\\ConfigurationResolverFactory' => $vendorDir . '/laravel/pint/app/Factories/ConfigurationResolverFactory.php',
+    'App\\Http\\Controllers\\Api\\UserController' => $baseDir . '/app/Http/Controllers/Api/UserController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
