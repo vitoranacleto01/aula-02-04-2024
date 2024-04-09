@@ -18,13 +18,24 @@ class ProdutoController extends Controller
 
     public function store(Request $request)
     {
-       $produto = Produto::create([
-         'nome' => $request->nome,
-         'valor' => $request->valor,
-         'descrição' => $request->descrição,
-       ]);
+      try {
+        $produto = Produto::create([
+            'nome' => $request->nome,
+            'valor' => $request->valor,
+            'descricao' => $request->descricao,
+        ]);
+        
+      return response()->json($produto, 201); // 201: Created
+    } catch (\Exception $e) {
+      return response()->json(['error' => 'Erro ao criar produto: ' . $e->getMessage()], 500); // 500: Internal Server Error
+    }
+      //  $produto = Produto::create([
+      //    'nome' => $request->nome,
+      //    'valor' => $request->valor,
+      //    'descrição' => $request->descricao,
+      //  ]);
 
-       return $produto;
+      //  return $produto;
     }
 
     public function update($id_produto, Request $request)
