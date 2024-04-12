@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Produto;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProdutoController extends Controller
@@ -18,41 +18,30 @@ class ProdutoController extends Controller
 
     public function store(Request $request)
     {
-      try {
-        $produto = Produto::create([
-            'nome' => $request->nome,
-            'valor' => $request->valor,
-            'descricao' => $request->descricao,
-        ]);
-        
-      return response()->json($produto, 201); // 201: Created
-    } catch (\Exception $e) {
-      return response()->json(['error' => 'Erro ao criar produto: ' . $e->getMessage()], 500); // 500: Internal Server Error
-    }
-      //  $produto = Produto::create([
-      //    'nome' => $request->nome,
-      //    'valor' => $request->valor,
-      //    'descrição' => $request->descricao,
-      //  ]);
+       $produto = Produto::create([
+         'nome' => $request->nome,
+         'valor' => $request->valor,
+         'descricao' => $request->descricao,
+       ]);
 
-      //  return $produto;
+       return $produto;
     }
 
-    public function update($id_produto, Request $request)
+    public function update($id, Request $request)
     {
-      $produto = Produto::find($id_produto);
+      $produto = Produto::find($id);
 
       if(!$produto) {
-        return response()-> json("Produto não encontrado");
+        return response()-> json("Usuário não encontrado");
       }
       
 
       return response()->json($produto);
     }
 
-    public function delete($id_produto)
+    public function delete($id)
     {
-        $produto = Produto::find($id_produto);
+        $produto = Produto::find($id);
 
         $produto->delete();
 
