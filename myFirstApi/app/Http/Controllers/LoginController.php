@@ -16,7 +16,7 @@ class LoginController extends Controller
         ];
 
         if(!Auth::attempt($credentials)) {
-            return back()->withErrors('Credenciais inválidas, tente novamente');
+            return back()->withErrors('Credenciais inválidas, tente novamente.');
         }
 
         return redirect()->route('home');
